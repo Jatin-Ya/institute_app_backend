@@ -1,4 +1,5 @@
 const Timetable = require('../models/timetableModel');
+const catchAsync = require('../utils/catchAsync');
 
 exports.getAllTimetables = catchAsync(async (req, res, next) => {
   const timetables = await Timetable.find().populate('course').populate('prof');
