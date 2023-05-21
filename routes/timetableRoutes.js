@@ -6,6 +6,6 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(timetableController.getAllTimetables)
+  .get(timetableController.getAllTimetables);
 
 module.exports = router;
