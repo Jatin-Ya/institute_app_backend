@@ -25,11 +25,11 @@ exports.getCourse =catchAsync(async(req, res,next)=>{
 
 exports.createCourse =catchAsync( async (req, res,next)=>{
 
-  const newNFT = await Course.create(req.body);
+  const newCourse = await Course.create(req.body);
   res.status(201).json({
       status:"success",
       data: {
-          course : newNFT
+          course : newCourse
       }
   });   
 
