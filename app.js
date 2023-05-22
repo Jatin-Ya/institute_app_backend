@@ -5,12 +5,14 @@ const app = express();
 
 const courseRouter = require('./routes/courseRoutes');
 const timetableRouter = require('./routes/timetableRoutes');
+const authRouter = require('./routes/authRoutes');
 
 app.use(cors());
 app.use(express.json());
 
+app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/courses', courseRouter);
-// app.use('/api/v1/timetables', timetableRouter);
+app.use('/api/v1/timetables', timetableRouter);
 
 
 app.use((err, req, res, next) => {
