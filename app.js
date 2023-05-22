@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const catchAsync = require('./utils/catchAsync');
+const requestLogger = require('./utils/requestLogger');
 const app = express();
 
 const courseRouter = require('./routes/courseRoutes');
@@ -12,6 +13,8 @@ const notificationTokenRouter = require('./routes/notificationTokenRoutes');
 
 app.use(cors());
 app.use(express.json());
+
+app.use(requestLogger);
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/courses', courseRouter);

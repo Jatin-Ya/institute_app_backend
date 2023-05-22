@@ -23,7 +23,7 @@ exports.getAllNotificationTokens = catchAsync( async (req, res, next) => {
 
 exports.createNotificationToken = catchAsync( async (req, res) => {
   let tokenList = await NotificationToken.find();
-  console.log(req.body.notificationToken);
+  // console.log(req.body.notificationToken);
   if (tokenList.length > 0) {
     if (tokenList[0].tokens.includes(req.body.notificationToken)) {
       return res.status(201).json({
